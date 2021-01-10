@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : BasePlayer
 {
-    float hp = 100.0f;
+    int hp = 3;
 
     // ビーダマの情報
     float power = 500;
@@ -15,7 +15,15 @@ public class Player : BasePlayer
         if(Input.GetKeyDown("space")){
             shot();
         }
-
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.tag == "Marble"){
+            hp = hp -1;
+        }
+        if(hp ==0){
+            GameOver();
+        }
     }
 
     void shot(){

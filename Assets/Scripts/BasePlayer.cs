@@ -14,6 +14,9 @@ public abstract class BasePlayer : MonoBehaviour
     //操作用オブジェクト
     Rigidbody2D rigidbody2D;
 
+    [SerializeField] GameManager gameManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,10 @@ public abstract class BasePlayer : MonoBehaviour
 
         void FixedUpdate(){
 
+    }
+
+    public void GameOver(){
+        gameManager.GameOver();
     }
 
     void shot(){
