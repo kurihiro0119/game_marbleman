@@ -51,6 +51,7 @@ public class Enemy : BasePlayer
 
         if(collision.gameObject.tag == "Marble"){
             if(shotmanagerRigidbody.velocity.y > 0){
+                Debug.Log("x:" + shotmanagerRigidbody.velocity.x + " y:" + shotmanagerRigidbody.velocity.y);
                 hp = hp -1;
             }
         }
