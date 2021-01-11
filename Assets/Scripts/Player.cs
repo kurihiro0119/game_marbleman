@@ -5,21 +5,37 @@ using UnityEngine;
 public class Player : BasePlayer
 {
     int hp = 3;
+    const float shotCurve = 0;
+    const float shotSpeed = 10.0f;
 
     // ビーダマの情報
     float power = 500;
     [SerializeField] GameObject modelMarble;
     GameObject marble;
 
+    float waitingTime = 0.0f;
+    bool fireflag = true;
+
     void FixedUpdate(){
+        waitingTime -= 1;
+        if(waitingTime <=0){
+            fireflag = true;
+        }
+
         if(Input.GetKeyDown("space")){
-            shot();
+            if(fireflag){
+                shot();
+            }
         }
     }
     
     private void OnTriggerEnter2D(Collider2D collision){
+        Rigidbody2D shotmanagerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+
         if(collision.gameObject.tag == "Marble"){
-            hp = hp -1;
+            if(shotmanagerRigidbody.velocity.y < 0){
+                hp = hp -1;
+            }
         }
         if(hp ==0){
             GameOver();
@@ -28,8 +44,9 @@ public class Player : BasePlayer
 
     void shot(){
         marble = Instantiate(modelMarble, this.transform.position, this.transform.rotation);
-        ShotManager shotmanager = marble.GetComponent<ShotManager>();
-        shotmanager.Create();
-        Debug.Log("shot");
+        PlayerShotManager shotmanager = marble.GetComponent<PlayerShotManager>();
+        shotmanager.Create(shotCurve, shotSpeed);
+        waitingTime = 50.0f;
+        fireflag = false;
     }
 }
