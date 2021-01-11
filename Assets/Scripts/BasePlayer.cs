@@ -5,14 +5,14 @@ using UnityEngine;
 public abstract class BasePlayer : MonoBehaviour
 {
     // 操作速度
-    float movingSpeed;
+    public float movingSpeed;
 
-    float speed = 3.0f;
+    public float speed = 3.0f;
     //キーボードの入力情報
-    float inputData;
+    public float inputData;
 
     //操作用オブジェクト
-    Rigidbody2D rigidbody2D;
+    public Rigidbody2D rigidbody2D;
 
     [SerializeField] GameManager gameManager;
 
@@ -47,6 +47,10 @@ public abstract class BasePlayer : MonoBehaviour
 
     public void GameOver(){
         gameManager.GameOver();
+    }
+
+    public void GameClear(){
+        gameManager.GameClear();
     }
 
     void shot(){
