@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : BasePlayer
 {
     int hp = 3;
-    const float shotCurve = 0;
+    const float shotCurve = 6.0f;
     const float shotSpeed = 10.0f;
 
     // ビーダマの情報
