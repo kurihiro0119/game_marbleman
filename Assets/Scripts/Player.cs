@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : BasePlayer
 {
     int hp = 3;
+
     const float defaultShotCurve = 0;
     const float defaultShotSpeed = 10.0f;
 

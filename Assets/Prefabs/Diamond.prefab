@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8579906923946912871}
   - component: {fileID: 7704872927984746405}
   - component: {fileID: 2587282073128740755}
+  - component: {fileID: 3848847182281903887}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Marble
@@ -118,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07427105, y: 0.13383305}
+  m_Offset: {x: -0.058416396, y: 0.124773264}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7761894, y: 0.5983541}
+  m_Size: {x: 0.92567605, y: 0.75237083}
   m_EdgeRadius: 0
 --- !u!114 &2587282073128740755
 MonoBehaviour:
@@ -143,3 +144,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d430c8f45b0645cfa3a522f0467680f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &3848847182281903887
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200940643374008807}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.026532114, y: 0.14455709}
+  serializedVersion: 2
+  m_Radius: 0.34114298
