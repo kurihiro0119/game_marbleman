@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShotManager : ShotManager
 {
 
-    private void OnTriggerEnter2D(Collider2D collision){
+    private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Enemy" ){
             Destroy(this.gameObject);
         }
@@ -13,5 +13,10 @@ public class PlayerShotManager : ShotManager
         if(collision.gameObject.tag == "Marble" ){
             Destroy(this.gameObject);
         }
+
+        if(collision.gameObject.tag == "TopWall" ){
+            Destroy(this.gameObject);
+        }
+        
     }
 }
