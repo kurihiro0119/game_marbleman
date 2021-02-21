@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3649729302650142663}
   - component: {fileID: 8422164839024075996}
   - component: {fileID: 694298672437620081}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ball
   m_TagString: Marble
   m_Icon: {fileID: 0}
@@ -106,10 +106,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0051540136, y: -0.0051540136}
+  m_Offset: {x: -0.02415526, y: 0.0051043034}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -120,7 +120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8519292, y: 0.7797718}
+  m_Size: {x: 0.91054773, y: 0.84132147}
   m_EdgeRadius: 0
 --- !u!50 &694298672437620081
 Rigidbody2D:
