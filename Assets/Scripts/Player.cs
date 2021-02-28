@@ -18,6 +18,9 @@ public class Player : BasePlayer
     [SerializeField] protected GameObject modelMarble;
     GameObject marble;
 
+    // SE
+    [SerializeField] protected AudioClip shotSE;
+
     // 発射待機
     float waitingTime = 0.0f;
     // 発射可否
@@ -64,15 +67,32 @@ public class Player : BasePlayer
         }
     }
     
-    private void OnTriggerEnter2D(Collider2D collision){
+    //private void OnTriggerEnter2D(Collider2D collision){
+    //    Rigidbody2D shotmanagerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+
+    //    if(collision.gameObject.tag == "Marble"){
+    //        if(shotmanagerRigidbody.velocity.y < 0){
+    //            hp = hp -1;
+    //        }
+    //    }
+    //    if(hp ==0){
+    //        GameOver();
+    //    }
+    //}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 衝突判定処理
+
         Rigidbody2D shotmanagerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
 
-        if(collision.gameObject.tag == "Marble"){
-            if(shotmanagerRigidbody.velocity.y < 0){
-                hp = hp -1;
-            }
+        if (collision.gameObject.tag == "Marble")
+        {
+            hp = hp - 1;
         }
-        if(hp ==0){
+        if (hp == 0)
+        {
+            Destroyed();
             GameOver();
         }
     }

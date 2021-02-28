@@ -46,16 +46,20 @@ public class Enemy : BasePlayer
             timeElapsed = 0.0f;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision){
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 衝突判定処理
+
         Rigidbody2D shotmanagerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
 
-        if(collision.gameObject.tag == "Marble"){
-            if(shotmanagerRigidbody.velocity.y > 0){
-                Debug.Log("x:" + shotmanagerRigidbody.velocity.x + " y:" + shotmanagerRigidbody.velocity.y);
-                hp = hp -1;
-            }
+        if (collision.gameObject.tag == "Marble")
+        {
+            hp = hp - 1;
         }
-        if(hp ==0){
+        if (hp == 0)
+        {
+            Destroyed();
             GameClear();
         }
     }

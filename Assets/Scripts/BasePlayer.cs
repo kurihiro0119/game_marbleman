@@ -8,18 +8,26 @@ public abstract class BasePlayer : MonoBehaviour
     public float movingSpeed;
 
     public float speed = 3.0f;
+
     //キーボードの入力情報
     public float inputData;
+
+    //音声スピーカー
+    public AudioSource audioSource;
 
     //操作用オブジェクト
     public Rigidbody2D rigidbody2D;
 
     [SerializeField] GameManager gameManager;
 
+    //爆発エフェクト
+    public GameObject explosionPrefab;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rigidbody2D = GetComponent<Rigidbody2D>(); 
     }
 
@@ -51,6 +59,12 @@ public abstract class BasePlayer : MonoBehaviour
 
     public void GameClear(){
         gameManager.GameClear();
+    }
+
+    public void Destroyed()
+    {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     void shot(){
