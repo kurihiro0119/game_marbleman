@@ -1,0 +1,5 @@
+tap "homebrew/bundle"
+tap "homebrew/core"
+brew "azure-cli"
+brew "pyenv"
+brew "python@3.9"
