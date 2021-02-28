@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Marble
   - Enemy
+  - TopWall
+  - BottomWall
   layers:
   - Default
   - TransparentFX
